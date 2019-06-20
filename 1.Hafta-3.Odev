@@ -1,0 +1,23 @@
+#---------------------------------1. HAFTA, 3. ODEV---------------------------------
+
+# 3- Oğrenci not ortalama programi
+
+
+ad = input("Lutfen adinizi girin: ")
+soyad = input("Lutfen soyadinizi girin: ")
+print("""
+- Sinav puanlari ve ders takip puani 0-100 arasidir.
+- Bir öğrencinin gitmesi gereken toplam ders sayısı 20’dir.
+""")
+vize_notu = int(input("Lutfen vize notunuzu girin: "))
+final_notu = int(input("Lutfen final notunuzu girin: "))
+ders_takip = int(input("Simdiye kadar kac derse girdiniz: "))
+ders_takip_notu = 100 - (20 - ders_takip) * 5
+yil_sonu_notu = 0.3 * vize_notu + 0.5 * final_notu + 0.2 * ders_takip_notu
+
+
+print('\n')
+print(ad, " ", soyad, ", yil sonu notunuz: ", yil_sonu_notu, sep = "")
+
+dosya_kayit = open("ogrenciNotHesaplama.txt", "w")
+print("Ad: ", ad,  "\nSoyad: ", soyad, "\nYil Sonu Notu: ", yil_sonu_notu, sep = "", file = dosya_kayit)
