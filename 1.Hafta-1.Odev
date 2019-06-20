@@ -1,0 +1,19 @@
+#---------------------------------1. HAFTA, 1. ODEV---------------------------------
+
+tutulan_takim = input("Lutfen tuttugunuz takimi buyuk harflerle giriniz: ")
+uzunluk = int((38-len(tutulan_takim))/2)
+
+print("""\n\n\n\t\t  ******************
+        **\t\t\t\t\t**
+      **\t\t\t\t\t  **
+    ** \t\t\t\t\t\t\t**
+  ** \t\t\t\t\t\t\t  **
+** \t\t\t\t\t\t\t\t\t**
+""", " " * uzunluk, tutulan_takim, "\n", " " * uzunluk, '_' * len(tutulan_takim), """
+** \t\t\t\t\t\t\t\t\t**
+  ** \t\t\t\t\t\t\t  **
+    ** \t\t\t\t\t\t\t**
+      **\t\t\t\t\t  **
+        **\t\t\t\t\t**
+\t\t  ******************
+""", sep="")
