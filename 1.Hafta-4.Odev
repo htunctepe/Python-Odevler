@@ -1,0 +1,17 @@
+#---------------------------------1. HAFTA, 4. ODEV---------------------------------
+
+#4- Faiz hesaplama programi
+
+anaPara = float(input("Anaparayi giriniz: "))
+faizSuresi = float(input("Faiz suresini (yil) giriniz: "))
+faizOrani = float(input("Faiz oranini yuzde olarak girin: "))
+
+faizTutari = anaPara * faizSuresi * faizOrani / 100
+
+print("Toplam faiz tutari:\t", faizTutari, "\nAylik faiz tutari:\t", int(faizTutari/faizSuresi/12*100)/100,
+      "\nGunluk faiz tutari:\t", int(faizTutari/faizSuresi/365*100)/100, "\nToplam para miktari:", anaPara + faizTutari)
+
+dosya = open("faizHesaplama.txt", "w")
+print("Toplam faiz tutari:\t", faizTutari, "\nAylik faiz tutari:\t", int(faizTutari/faizSuresi/12*100)/100,
+      "\nGunluk faiz tutari:\t", int(faizTutari/faizSuresi/365*100)/100,
+      "\nToplam para miktari:", anaPara + faizTutari, file=dosya)
