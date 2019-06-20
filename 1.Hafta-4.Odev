@@ -1,5 +1,4 @@
 #---------------------------------1. HAFTA, 4. ODEV---------------------------------
-
 #4- Faiz hesaplama programi
 
 anaPara = float(input("Anaparayi giriniz: "))
