@@ -1,7 +1,5 @@
 #---------------------------------1. HAFTA, 3. ODEV---------------------------------
-
 # 3- Oğrenci not ortalama programi
-
 
 ad = input("Lutfen adinizi girin: ")
 soyad = input("Lutfen soyadinizi girin: ")
@@ -14,7 +12,6 @@ final_notu = int(input("Lutfen final notunuzu girin: "))
 ders_takip = int(input("Simdiye kadar kac derse girdiniz: "))
 ders_takip_notu = 100 - (20 - ders_takip) * 5
 yil_sonu_notu = 0.3 * vize_notu + 0.5 * final_notu + 0.2 * ders_takip_notu
-
 
 print('\n')
 print(ad, " ", soyad, ", yil sonu notunuz: ", yil_sonu_notu, sep = "")
