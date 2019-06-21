@@ -1,7 +1,0 @@
-#---------------------------------1. HAFTA, 2. ODEV---------------------------------
-#2- Kullanıcıdan input ile km cinsinden mesafe bilgisi alıp, bu bilgiyi mile dönüştürün ve sonucu ekrana printleyin.
-
-unit_converter = 0.621371
-mesafe = float(input("Lutfen mile donusturulecek mesafeyi girin: "))
-
-print(mesafe, "kilometre", int(mesafe*unit_converter * 100) / 100, "mildir.")
