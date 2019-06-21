@@ -1,9 +1,0 @@
-#---------------------------------1. HAFTA, 6. ODEV---------------------------------
-#6- Ayni ciktiyi 3 farkli sekilde yazdirma
-
-print('\nPython’un kurucusu Guido Van Rossum, Hollanda’nin Amsterdam’daki '
-      '"Universiteit Van Amsterdam" okulundan  1982’de mezun olmuştur.')
-print("""\nPython’un kurucusu Guido Van Rossum, Hollanda’nin Amsterdam’daki \
-"Universiteit Van Amsterdam" okulundan  1982’de mezun olmuştur.""")
-print("\nPython’un kurucusu Guido Van Rossum, Hollanda’nin Amsterdam’daki "
-      "\"Universiteit Van Amsterdam\" okulundan  1982’de mezun olmuştur.")
