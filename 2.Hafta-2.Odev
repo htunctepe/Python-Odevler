@@ -1,0 +1,17 @@
+#---------------------------------2. HAFTA, 2. ODEV---------------------------------
+
+islem = int(input("""
+km-mil donusumu yapmak istiyorsaniz '1', 
+mil-km donusumu mu yapmak istiyorsaniz '2' girin: 
+"""))
+
+if islem == 1:
+    km = float(input("Donusturmek istediginiz km miktarini girin: "))
+    mil = round(km / 1.60934, 2)
+    print("{} km {} mildir.".format(km, mil))
+elif islem == 2:
+    mil = float(input("Donusturmek istediginiz mil miktarini girin: "))
+    km = round(mil * 1.60934, 2)
+    print("{} mil {} kmdir.".format(mil, km))
+else:
+    print("Yanlis bir giris yaptiniz! Programi tekrar calistirin.")
