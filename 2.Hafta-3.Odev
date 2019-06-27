@@ -1,0 +1,32 @@
+#---------------------------------2. HAFTA, 3. ODEV---------------------------------
+
+# Kullanicidan 3-18 karakter arasinda bir username olusturmasini isteyin.
+# Eger usernamede rakam varsa, rakam kullanamayacagina dair gerekli uyariyi yapin.
+# Sonrasinda kullanicidan 6 ile 12 karakter araliginda bir parola olusturmasini isteyin.
+# Olusturulan parolanin 6dan kisa ya da uzun olmasi durumlarinda gerekli uyarilari yapin.
+# Iki durumun sartlari da saglaniyorsa username ve parolayi hem ekrana printleyin hem de bir dosyaya kaydedin.
+
+username= input("Lutfen 3-18 karakter arasinda bir username olusturun: ")
+
+if len(username) not in range(3,19):
+    if len(username) < 3:
+        print("Kullanici adi 3 karakterden kisa olamaz! Lutfen programi tekrar calistirin!")
+    elif len(username) > 19:
+        print("Kullanici adi 18 karakterden uzun olamaz! Lutfen programi tekrar calistirin!")
+elif ('0' in username) or ('1' in username) or ('2' in username) or ('3' in username) or ('4' in username)\
+        or ('5' in username) or ('6' in username) or ('7' in username) or ('8' in username) or ('9' in username):
+    print("Kullanici adinda rakam kullanamazsiniz! Lutfen programi tekrar calistirin!")
+
+else:
+    parola = input("Lutfen 6-12 karakter arasinda bir parola olusturun: ")
+    if len(parola) not in range(6, 13):
+        if len(username) < 6:
+            print("Parola 6 karakterden kisa olamaz! Lutfen programi tekrar calistirin!")
+        elif len(username) > 13:
+            print("Parola 12 karakterden uzun olamaz! Lutfen programi tekrar calistirin!")
+    else:
+        print("""Username:\t{} \nParolaniz:\t{}""".format(username, parola))
+        dosya = open("kullanici_adi.txt", "w")
+        print("Bilgileriniz '{}' dosyasina kaydediliyor... \u27F2".format(dosya.name))
+        print("""Username:\t{} \nParolaniz:\t{}""".format(username, parola), file = dosya)
+        print("\n'{}' dosyasina kayit islemi tamamlandi.".format(dosya.name))
