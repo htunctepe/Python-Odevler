@@ -1,0 +1,27 @@
+#---------------------------------2. HAFTA, 5. ODEV---------------------------------
+
+
+bakiye = 1000
+
+islem = int(input(""" 
+1-bakiye kontrolu
+2-para yatirma
+3-para cekme
+Hangi islemi yapmak istiyorsunuz: """))
+if islem == 1:
+    print("\nHesabinizda {} euro para bulunmaktadir.".format(bakiye))
+elif islem == 2:
+    deposit = int(input("\nYatirmak istediginiz miktar: "))
+    print("Hesabiniza {} euro yatirildi.".format(deposit))
+    bakiye += deposit
+    print("Yeni hesap bakiyeniz: {} eurodur.".format(bakiye))
+elif islem == 3:
+    withdrawn = int(input("\nCekmek istediginiz miktar: "))
+    if withdrawn <= bakiye:
+        print("Hesabinizdan {} euro cekilmistir.".format(withdrawn))
+        bakiye -= withdrawn
+        print("Kalan bakiyeniz: {} eurodur.".format(bakiye))
+    else:
+        print("Cekmek istediginiz tutar: {} euro".format(withdrawn), "\nBakiyeniz yetersiz!")
+else:
+    print("Yanlis bir giris yaptiniz!")
