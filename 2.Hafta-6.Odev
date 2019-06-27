@@ -1,27 +1,34 @@
-#---------------------------------2. HAFTA, 5. ODEV---------------------------------
+#---------------------------------2. HAFTA, 6. ODEV---------------------------------
 
+# Vize1 %30
+# vize2 %30
+# final 40%
 
-bakiye = 1000
+vize1 = int(input("1. vize notunuz: "))
+vize2 = int(input("2. vize notunuz: "))
+final = int(input("Final notunuz: "))
 
-islem = int(input(""" 
-1-bakiye kontrolu
-2-para yatirma
-3-para cekme
-Hangi islemi yapmak istiyorsunuz: """))
-if islem == 1:
-    print("\nHesabinizda {} euro para bulunmaktadir.".format(bakiye))
-elif islem == 2:
-    deposit = int(input("\nYatirmak istediginiz miktar: "))
-    print("Hesabiniza {} euro yatirildi.".format(deposit))
-    bakiye += deposit
-    print("Yeni hesap bakiyeniz: {} eurodur.".format(bakiye))
-elif islem == 3:
-    withdrawn = int(input("\nCekmek istediginiz miktar: "))
-    if withdrawn <= bakiye:
-        print("Hesabinizdan {} euro cekilmistir.".format(withdrawn))
-        bakiye -= withdrawn
-        print("Kalan bakiyeniz: {} eurodur.".format(bakiye))
-    else:
-        print("Cekmek istediginiz tutar: {} euro".format(withdrawn), "\nBakiyeniz yetersiz!")
+notOrtalamasi: float = vize1 * 0.3 + vize2 * 0.3 + final * 0.4
+harfNotu = ''
+
+if notOrtalamasi >= 90:
+    harfNotu = 'AA'
+elif notOrtalamasi >= 85:
+    harfNotu = 'BA'
+elif notOrtalamasi >= 80:
+    harfNotu = 'BB'
+elif notOrtalamasi >= 75:
+    harfNotu = 'CB'
+elif notOrtalamasi >= 70:
+    harfNotu = 'CC'
+elif notOrtalamasi >= 65:
+    harfNotu = 'DC'
+elif notOrtalamasi >= 60:
+    harfNotu = 'DD'
+elif notOrtalamasi >= 55:
+    harfNotu = 'FD'
 else:
-    print("Yanlis bir giris yaptiniz!")
+    harfNotu = 'FF'
+
+print("\nNot ortalamaniz: {}".format(notOrtalamasi))
+print("Harf notunuz: {}".format(harfNotu))
