@@ -1,0 +1,31 @@
+#---------------------------------2. HAFTA, 4. ODEV---------------------------------
+
+
+import random
+number = random.randint(1,10)
+counter = 5
+print(number)
+
+guessed = int(input("\nLutfen 1 ile 10 arasinda bir sayi tahmin edin: "))
+
+if guessed == number:
+    print("\nTebrikler ilk denemede bildiniz!", "\u2605" * 3)
+    counter -= 1
+else:
+    guessed = int(input("\nBilemediniz. 4 Hakkiniz kaldi. \nTekrar 1 ile 10 arasinda bir sayi tahmin edin: "))
+    if guessed == number:
+        print("Tebrikler ikinci denemede bildiniz!", "\u2605" * 3)
+    else:
+        guessed = int(input("\nYine olmadi. 3 hakkiniz kaldi. \nTekrar 1 ile 10 arasinda bir sayi tahmin edin: "))
+        if guessed == number:
+            print("Tebrikler ucuncu denemede bildiniz!", "\u2605" * 2)
+        else:
+            guessed = int(input("\nMaalesef yine olmadi. 2 hakkiniz kaldi. \nTekrar 1 ile 10 arasinda bir sayi tahmin edin: "))
+            if guessed == number:
+                print("Tebrikler dorduncu denemede bildiniz!", "\u2605" * 2)
+            else:
+                guessed = int(input("\nMaalesef yine olmadi. Son hakkiniz. \nTekrar 1 ile 10 arasinda bir sayi tahmin edin: "))
+                if guessed == number:
+                    print("Tebrikler dorduncu denemede bildiniz!", "\u2605")
+                else:
+                    print("Uzgunuz 5 denemede de bilemediniz!. Maalesef daha fazla hakkiniz kalmadi. \U0001F61E")
