@@ -1,0 +1,43 @@
+#---------------------------------2. HAFTA, 6. ODEV---------------------------------
+option = int(input("""
+1-ucgen
+2-dortgen
+Tipini ogrenmek istediginiz geometrik sekil icin bir secenek girin: """))
+
+#--------------------------Ucgen--------------------------
+if option == 1:
+    side1 = float(input("Ucgenin 1. kenarini girin: "))
+    side2 = float(input("Ucgenin 2. kenarini girin: "))
+    side3 = float(input("Ucgenin 3. kenarini girin: "))
+
+    if not (((abs(side2-side3) < side1) and side1 < (side2+side3))
+            and ((abs(side1-side3) < side2) and side2 < (side1+side3))
+            and ((abs(side1-side2) < side3) and side3 < (side1+side2))):
+        print("\nGirmis oldugunuz uzunluk olculeri bir ucgen teskil etmiyor!")
+
+    else:
+        if ((side1 + side2 + side3) / 3 == side1):
+            print("\nGirmis oldugunuz olculere sahip olan sekil bir eskenar ucgendir!")
+        elif ((side1 == side2)
+              or (side1 == side3)
+              or (side2 == side3)):
+            print("\nGirmis oldugunuz olculere sahip olan sekil bir ikizkenar ucgendir.")
+        else:
+            print("\nGirmis oldugunuz olculere sahip olan sekil bir cesitkenar ucgendir!")
+
+#--------------------------Dortgen--------------------------
+elif option == 2:
+    side1 = float(input("Dortgenin 1. kenarini girin: "))
+    side2 = float(input("Dortgenin 2. kenarini girin: "))
+    side3 = float(input("Dortgenin 3. kenarini girin: "))
+    side4 = float(input("Dortgenin 4. kenarini girin: "))
+    if (side1 + side2 + side3 + side4) / 4 == side1:
+        print("\nGirmis oldugunuz olculere sahip olan sekil bir karedir!")
+    elif (((side1 + side2 + side3 + side4) / 2 == side1 + side2)
+          or ((side1 + side2 + side3 + side4) / 2 == (side1 + side3))
+          or ((side1 + side2 + side3 + side4) / 2 == side1 + side4)):
+        print("\nGirmis oldugunuz olculere sahip olan sekil bir dikdortgendir.")
+    else:
+        print("\nGirmis oldugunuz olculere sahip olan sekil bir cesitkenar dortgendir!")
+else:
+    print("\nYanlis bir giris yaptiniz!")
