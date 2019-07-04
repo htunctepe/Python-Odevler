@@ -19,9 +19,11 @@ ay = input("Dogdugunuz ayi girin: ")
 gun = input("{} ayinin hangi gunu dogdunuz: ".format(ay))
 burc =''
 
-if ((not ay.lower() in uzunAylar) and (not ay.lower() in kisaAylar)) or (ay in uzunAylar and not gun in range(1,32)) \
-        or (ay.lower() in kisaAylar and not gun in range(1,30) or (ay.lower() == 'subat') and gun not in range(1,29)) \
-        or ((bool(ay) == False) or (bool(gun) == False)):
+print(not gun in range(1,32))
+
+if not (((not ay.lower() in uzunAylar) or (not ay.lower() in kisaAylar)) or (ay in uzunAylar and (not gun in range(1,32))) \
+        or (ay.lower() in kisaAylar and not gun in range(1,31) or (ay.lower() == 'subat') and gun not in range(1,29)) \
+        or ((bool(ay) == False) or (bool(gun) == False))):
     print("Yanlis bir giris yaptiniz! Programi tekrar calistirin.")
 else:
     gun = int(gun)
