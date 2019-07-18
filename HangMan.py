@@ -1,0 +1,105 @@
+# _______________________________5.Hafta, 1.Odev_______________________________
+import random
+noOfTrials = 0
+enteredChars = []
+start = """
+       +---+    You have 6 trials!
+       |   |
+       |    
+       |
+       |
+       |
+========="""
+pics = ["""
+       +---+    You have {} more trials left!
+       |   |
+       |   O 
+       |
+       |
+       |
+=========""", """
+       +---+    You have {} more trials left!
+       |   |
+       |   O
+       |   |
+       |
+       |
+=========""", """
+       +---+    You have {} more trials left!
+       |   |
+       |   O
+       |  /|
+       |
+       |
+=========""", """
+       +---+    You have {} more trials left!
+       |   |
+       |   O
+       |  /|\\
+       |
+       |
+=========""", """
+       +---+    You have {} more trials left!
+       |   |
+       |   O
+       |  /|\\
+       |  /
+       |
+=========""", """
+       +---+    You have {} more trials left!
+       |   |
+       |   O
+       |  /|\\ 
+       |  / \\
+       |
+=========
+Oops! You killed the man!"""]
+# One of the following words in the list will be selected randomly for the user to guess
+secretWords = ['KAPALILIK', 'PYTHON', 'INTERNET']
+# Generating a number to be used to select the word from the secretWords list.
+# We could just use random.choice(secretWords) to replace the code between lines 61-63.
+selectedWord = random.randint(0, 2)
+# Storing the selected item from the secretWords list into a list of letters
+answer = list(secretWords[selectedWord])
+# Defining a variable to keep the number of underscores '_' to be written for unguessed letters
+unguessed = ['_'] * len(answer)
+# The following commented code (lines 68-69) also does the same thing as line 65
+"""
+for i in range(len(answer)):
+    unguessed.append('_')
+"""
+print('<----------------Hangman Game---------------->', start, sep='\n\n')
+if selectedWord == 0:
+    print('\nHint: Noun form of closed in Turkish language.')
+elif selectedWord == 1:
+    print('\nHint: A programming language ;).')
+else:
+    print('\nHint: The digital medium with connected computers you use everyday to search information or just to surf.')
+
+while noOfTrials < 6:
+    try:
+        print('\n', ' '.join(unguessed), sep='')
+        userGuess = input('\nGuess a letter: ')
+        if userGuess.isalpha() == True:
+            if not userGuess in enteredChars:
+                enteredChars += userGuess
+                if not userGuess.upper() in answer:
+                    noOfTrials += 1
+                    print(pics[noOfTrials - 1].format(6 - noOfTrials))
+                else:
+                    for i in range(len(answer)):
+                        if userGuess.upper() == answer[i]:
+                            unguessed[i] = userGuess.upper()
+
+                if unguessed == answer:
+                    print('Congratulations! You guessed the word "{}".'.format(''.join(answer)))
+                    break
+                else:
+                    if noOfTrials == 6:
+                        print('The word was "{}".'.format(''.join(answer)))
+            else:
+                print('\nYou have already entered the letter "{}".'.format(userGuess.upper()))
+        else:
+            raise ValueError
+    except ValueError:
+        print('You made an invalid entry! You should enter a letter!')
